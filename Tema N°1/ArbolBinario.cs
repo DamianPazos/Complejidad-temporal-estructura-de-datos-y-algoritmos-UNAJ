@@ -37,35 +37,79 @@ namespace ArbolBinario
             return this.hijoDer;
         }
 
-        public void agregarHijoIzq(ArbolBinario<T> arbolHijo)
+        public void addHijoIzq(ArbolBinario<T> arbolHijo)
         {
             this.hijoIzq= arbolHijo;
         }
 
-        public void agregarHijoDer(ArbolBinario<T> arbolHijo)
+        public void addHijoDer(ArbolBinario<T> arbolHijo)
         {
             this.hijoDer= arbolHijo;
         }
 
-        public void eliminarHijoIzq()
+        public void deleteHijoIzq()
         {
             this.hijoIzq = null;
         }
 
-        public void eliminarHijoDer()
+        public void deleteHijoDer()
         {
             this.hijoDer = null;
         }
 
-        public bool esHoja()
+        public bool isHoja()
         {
             return this.hijoDer == null && this.hijoIzq == null; 
         }
 
         public void preorden()
         {
+            Console.WriteLine(this.dato);
+            if (this.hijoIzq != null)
+            {
+                this.hijoIzq.preorden();
+            }
+            if (this.hijoDer != null)
+            {
+                this.hijoDer.preorden();
+            }
+        }
+
+        public void inorden()
+        {
+            if (this.hijoIzq != null)
+            {
+                this.hijoIzq.inorden();
+            }
+            Console.WriteLine(this.dato);
+            if (this.hijoDer != null)
+            {
+                this.hijoDer.inorden();
+            }
+        }
+
+        public void postorden()
+        {
+            if (this.hijoIzq != null)
+            {
+                this.hijoIzq.postorden();
+            }
+            if (this.hijoDer != null)
+            {
+                this.hijoDer.postorden();
+            }
+            Console.WriteLine(this.dato);
+        }
+
+        /* Need other class "queque"*/
+        public void porNiveles()
+        {
 
         }
 
+        public int contarHojas()
+        {
+            
+        }
     }
 }
