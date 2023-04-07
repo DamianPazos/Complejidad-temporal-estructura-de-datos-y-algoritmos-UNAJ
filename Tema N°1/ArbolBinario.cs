@@ -101,7 +101,7 @@ namespace ArbolBinario
             Console.WriteLine(this.dato);
         }
 
-        /* Need other class "queque"*/
+        /* Need other class "queue"*/
         public void porNiveles()
         {
 
@@ -109,7 +109,18 @@ namespace ArbolBinario
 
         public int contarHojas()
         {
-            
+            if (this.dato == null)
+            {
+                return 0;
+            }
+            else if (this.isHoja())
+            {
+                return 1;
+            }
+            else 
+            {
+                return this.hijoIzq.contarHojas() + this.hijoDer.contarHojas();
+            }
         }
     }
 }
