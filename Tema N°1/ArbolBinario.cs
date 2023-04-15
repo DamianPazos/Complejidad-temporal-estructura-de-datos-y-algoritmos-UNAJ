@@ -5,7 +5,7 @@ namespace ArbolBinario
     public class ArbolBinario<T> 
     {
 
-        /*Atributte*/
+        /*Attribute*/
         private T dato;
         private ArbolBinario<T> hijoIzq;
         private ArbolBinario<T> hijoDer;
@@ -107,6 +107,7 @@ namespace ArbolBinario
 
         }
 
+        /* Review exception */
         public int contarHojas()
         {
             if (this.dato == null)
