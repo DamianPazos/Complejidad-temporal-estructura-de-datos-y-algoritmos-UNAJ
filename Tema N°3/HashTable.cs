@@ -32,12 +32,23 @@ namespace HashTable
             table[index].Add(employee);
         }
 
-        public T hashSearch(T employee)
+        public T hashSearch(int dni)
         {
-            
+            int index = this.hashFunction(dni);
+            if (table[index] != null) 
+            {
+                foreach (Employee employee in table[index])
+                {
+                    if (dni == employee.getDni()) {
+                        return employee;
+                    }
+                }
+                return null;
+            }
+            else 
+            {
+                return null;
+            }
         }
-
-
-
     }
 }
